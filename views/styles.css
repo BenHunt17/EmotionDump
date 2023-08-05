@@ -1,0 +1,53 @@
+body {
+  font-family: "Lucida Console", Monaco, monospace;
+  letter-spacing: 0px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+
+input {
+  visibility: hidden;
+}
+
+#layout {
+  display: grid;
+  row-gap: 32px;
+}
+
+#fileUploadUI {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: #f2f2f2;
+  border: #696969 1px solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#dumpButton {
+  width: 175px;
+  height: 50px;
+  background-color: #4d4d5c;
+  color: white;
+  border-radius: 10px;
+}
+
+#dumpButton:hover:not(:disabled) {
+  filter: brightness(0.9);
+  cursor: pointer;
+}
+
+#dumpButton:active:not(:disabled) {
+  filter: brightness(0.8);
+}
+
+#dumpButton:disabled {
+  opacity: 0.5;
+}

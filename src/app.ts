@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import fileUpload from "express-fileupload";
+import { dumpEmotions } from "./emotionsService";
 
 dotenv.config();
 
@@ -25,9 +26,12 @@ app.post(
       return;
     }
 
-    //TODO - implement the rest
-
-    res.sendStatus(201);
+    dumpEmotions(file.data)
+      .then(() => res.sendStatus(201))
+      .catch((e) => {
+        console.error(e);
+        res.sendStatus(500);
+      });
   }
 );
 
